@@ -27,6 +27,7 @@ class GameViewController: UIViewController {
 			
 			if let scene = SKScene(fileNamed: "MenuScene") {
 				scene.scaleMode = .aspectFit
+//				scene.userData = NSMutableDictionary()
 				view.presentScene(scene)
 			}
 			

@@ -13,7 +13,8 @@ class MenuScene: SKScene {
 	
 	var starfield: SKEmitterNode!
 	var newGameButtonNode: SKSpriteNode!
-	var difficultiyLabel: SKLabelNode!
+	var difficultyLabelNode: SKLabelNode!
+//	var difficultyLevel: Float!
 	
 	let slider = UISlider(frame: CGRect(x: 57, y: 315, width: 250, height: 5))
 	
@@ -22,6 +23,7 @@ class MenuScene: SKScene {
 		starfield.advanceSimulationTime(10)
 		
 		newGameButtonNode = self.childNode(withName: "newGameButton") as! SKSpriteNode
+		difficultyLabelNode = self.childNode(withName: "difficultyLabel") as! SKLabelNode
 		loadSlider()
 	}
 	
@@ -34,13 +36,12 @@ class MenuScene: SKScene {
 	}
 	
 	@objc func sliderValueDidChange(_ sender:UISlider!) {
-		
-		let min = sender.minimumValue
-		let max = sender.maximumValue
-		
-		let current = sender.value
-		
-		
+		changeDifficulty(value: sender.value)
+	}
+	
+	func changeDifficulty(value: Float) {
+//		difficultyLevel = value
+		difficultyLabelNode.text = String(format: "Speed: %.f", value)
 	}
 	
 	override func willMove(from view: SKView) {
