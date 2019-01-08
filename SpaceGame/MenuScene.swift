@@ -29,7 +29,7 @@ class MenuScene: SKScene {
 	
 	private func loadSlider() {
 		slider.minimumValue = 1
-		slider.maximumValue = 7
+		slider.maximumValue = 10
 		slider.isContinuous = true
 		slider.addTarget(self, action: #selector(sliderValueDidChange(_:)), for: .valueChanged)
 		view?.addSubview(slider)
