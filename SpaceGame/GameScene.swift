@@ -28,10 +28,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	
 	let alienCategory: Int32 = 0x1 << 1
 	let photonTorepdoCategory: Int32 = 0x1 << 0
-    
+	
     override func didMove(to view: SKView) {
+		
 		starfield = SKEmitterNode(fileNamed: "Starfield")
-		starfield.position = CGPoint(x: 0, y: 1472)
+		starfield.position = CGPoint(x: 430, y: self.frame.maxY)
 		starfield.advanceSimulationTime(10)
 		self.addChild(starfield)
 		
@@ -73,7 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		
 		self.addChild(alien)
 		
-		let animationDuration: TimeInterval = 6
+		let animationDuration: TimeInterval = 7
 
 		var actionArray = [SKAction]()
 		actionArray.append(SKAction.move(to: CGPoint(x: xPosition, y: self.frame.minY), duration: animationDuration))

@@ -20,6 +20,8 @@
 		29D3D76221CC8C2E003EB06E /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D76121CC8C2E003EB06E /* MyParticle.sks */; };
 		29D3D76421CC8CB1003EB06E /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D76321CC8CB1003EB06E /* Explosion.sks */; };
 		29D3D76621CC8CBC003EB06E /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D76521CC8CBC003EB06E /* Starfield.sks */; };
+		29D3D76821E03FDF003EB06E /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D76721E03FDF003EB06E /* MenuScene.sks */; };
+		29D3D76A21E04713003EB06E /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D3D76921E04713003EB06E /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		29D3D76121CC8C2E003EB06E /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		29D3D76321CC8CB1003EB06E /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		29D3D76521CC8CBC003EB06E /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Starfield.sks; sourceTree = "<group>"; };
+		29D3D76721E03FDF003EB06E /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
+		29D3D76921E04713003EB06E /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				29D3D74B21CC81D2003EB06E /* GameScene.swift */,
 				29D3D74D21CC81D2003EB06E /* GameViewController.swift */,
 				29D3D74F21CC81D2003EB06E /* Main.storyboard */,
+				29D3D76721E03FDF003EB06E /* MenuScene.sks */,
+				29D3D76921E04713003EB06E /* MenuScene.swift */,
 				29D3D75D21CC8B41003EB06E /* explosion.mp3 */,
 				29D3D75F21CC8B52003EB06E /* torpedo.mp3 */,
 				29D3D75221CC81D3003EB06E /* Assets.xcassets */,
@@ -154,6 +160,7 @@
 				29D3D75321CC81D3003EB06E /* Assets.xcassets in Resources */,
 				29D3D75621CC81D3003EB06E /* LaunchScreen.storyboard in Resources */,
 				29D3D74A21CC81D2003EB06E /* Actions.sks in Resources */,
+				29D3D76821E03FDF003EB06E /* MenuScene.sks in Resources */,
 				29D3D76221CC8C2E003EB06E /* MyParticle.sks in Resources */,
 				29D3D76421CC8CB1003EB06E /* Explosion.sks in Resources */,
 			);
@@ -167,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29D3D74C21CC81D2003EB06E /* GameScene.swift in Sources */,
+				29D3D76A21E04713003EB06E /* MenuScene.swift in Sources */,
 				29D3D74E21CC81D2003EB06E /* GameViewController.swift in Sources */,
 				29D3D74621CC81D2003EB06E /* AppDelegate.swift in Sources */,
 			);
