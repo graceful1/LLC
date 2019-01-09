@@ -14,7 +14,7 @@ class MenuScene: SKScene {
 	var starfield: SKEmitterNode!
 	var newGameButtonNode: SKSpriteNode!
 	var difficultyLabelNode: SKLabelNode!
-//	var difficultyLevel: Float!
+	var currentGame: GameScene!
 	
 	let slider = UISlider(frame: CGRect(x: 57, y: 315, width: 250, height: 5))
 	
@@ -40,7 +40,6 @@ class MenuScene: SKScene {
 	}
 	
 	func changeDifficulty(value: Float) {
-//		difficultyLevel = value
 		difficultyLabelNode.text = String(format: "Speed: %.f", value)
 	}
 	

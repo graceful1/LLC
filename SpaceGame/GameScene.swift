@@ -29,6 +29,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	let alienCategory: Int32 = 0x1 << 1
 	let photonTorepdoCategory: Int32 = 0x1 << 0
 	
+	weak var menuScene: MenuScene!
+	
     override func didMove(to view: SKView) {
 		
 		starfield = SKEmitterNode(fileNamed: "Starfield")
