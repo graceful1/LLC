@@ -41,10 +41,8 @@ class MenuScene: SKScene {
 	
 	func changeDifficulty(value: Float) {
 		difficultyLabelNode.text = String(format: "Speed: %.f", value)
-		
-//		self.userDataDictionary["difficulty"] = Double(value)
-//		self.userData?.setValue(value, forKey: "difficulty")
-//		self.userData = NSMutableDictionary(dictionary: userDataDictionary)
+		let store = UserDefaults.standard
+		store.setValue(value, forKey: "difficulty")
 	}
 	
 	override func willMove(from view: SKView) {
