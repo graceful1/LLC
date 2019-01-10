@@ -14,7 +14,7 @@ class MenuScene: SKScene {
 	var starfield: SKEmitterNode!
 	var newGameButtonNode: SKSpriteNode!
 	var difficultyLabelNode: SKLabelNode!
-	var currentGame: GameScene!
+	var userDataDictionary = ["difficulty" : 1.0]
 	
 	let slider = UISlider(frame: CGRect(x: 57, y: 315, width: 250, height: 5))
 	
@@ -41,6 +41,10 @@ class MenuScene: SKScene {
 	
 	func changeDifficulty(value: Float) {
 		difficultyLabelNode.text = String(format: "Speed: %.f", value)
+		
+//		self.userDataDictionary["difficulty"] = Double(value)
+//		self.userData?.setValue(value, forKey: "difficulty")
+//		self.userData = NSMutableDictionary(dictionary: userDataDictionary)
 	}
 	
 	override func willMove(from view: SKView) {
@@ -61,3 +65,4 @@ class MenuScene: SKScene {
 	}
 
 }
+

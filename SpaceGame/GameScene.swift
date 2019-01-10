@@ -29,10 +29,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	let alienCategory: Int32 = 0x1 << 1
 	let photonTorepdoCategory: Int32 = 0x1 << 0
 	
-	weak var menuScene: MenuScene!
+//	var menuScene = MenuScene()
 	
     override func didMove(to view: SKView) {
-		
 		starfield = SKEmitterNode(fileNamed: "Starfield")
 		starfield.position = CGPoint(x: 430, y: self.frame.maxY)
 		starfield.advanceSimulationTime(10)
@@ -76,8 +75,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		
 		self.addChild(alien)
 		
-		let animationDuration: TimeInterval = 7
-
+		var animationDuration: TimeInterval!
+		animationDuration = 7
+		// need to change animationDuration to difficulty speed
+		
 		var actionArray = [SKAction]()
 		actionArray.append(SKAction.move(to: CGPoint(x: xPosition, y: self.frame.minY), duration: animationDuration))
 
