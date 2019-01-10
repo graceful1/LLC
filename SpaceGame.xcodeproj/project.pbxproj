@@ -55,6 +55,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29817EA621E73CAA0094DBFE /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				29D3D74721CC81D2003EB06E /* GameScene.sks */,
+				29D3D74B21CC81D2003EB06E /* GameScene.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		29817EA721E73D2B0094DBFE /* Emitters */ = {
+			isa = PBXGroup;
+			children = (
+				29D3D76321CC8CB1003EB06E /* Explosion.sks */,
+				29D3D76521CC8CBC003EB06E /* Starfield.sks */,
+				29D3D76121CC8C2E003EB06E /* MyParticle.sks */,
+			);
+			path = Emitters;
+			sourceTree = "<group>";
+		};
+		29817EA821E73D4E0094DBFE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				29D3D75D21CC8B41003EB06E /* explosion.mp3 */,
+				29D3D75F21CC8B52003EB06E /* torpedo.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		29817EA921E73D780094DBFE /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				29D3D76721E03FDF003EB06E /* MenuScene.sks */,
+				29D3D76921E04713003EB06E /* MenuScene.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		29D3D73921CC81D2003EB06E = {
 			isa = PBXGroup;
 			children = (
@@ -75,19 +112,14 @@
 			isa = PBXGroup;
 			children = (
 				29D3D74521CC81D2003EB06E /* AppDelegate.swift */,
-				29D3D74721CC81D2003EB06E /* GameScene.sks */,
 				29D3D74921CC81D2003EB06E /* Actions.sks */,
-				29D3D74B21CC81D2003EB06E /* GameScene.swift */,
 				29D3D74D21CC81D2003EB06E /* GameViewController.swift */,
 				29D3D74F21CC81D2003EB06E /* Main.storyboard */,
-				29D3D76721E03FDF003EB06E /* MenuScene.sks */,
-				29D3D76921E04713003EB06E /* MenuScene.swift */,
-				29D3D75D21CC8B41003EB06E /* explosion.mp3 */,
-				29D3D75F21CC8B52003EB06E /* torpedo.mp3 */,
+				29817EA621E73CAA0094DBFE /* Game */,
+				29817EA921E73D780094DBFE /* Menu */,
+				29817EA821E73D4E0094DBFE /* Sounds */,
 				29D3D75221CC81D3003EB06E /* Assets.xcassets */,
-				29D3D76321CC8CB1003EB06E /* Explosion.sks */,
-				29D3D76521CC8CBC003EB06E /* Starfield.sks */,
-				29D3D76121CC8C2E003EB06E /* MyParticle.sks */,
+				29817EA721E73D2B0094DBFE /* Emitters */,
 				29D3D75421CC81D3003EB06E /* LaunchScreen.storyboard */,
 				29D3D75721CC81D3003EB06E /* Info.plist */,
 			);
