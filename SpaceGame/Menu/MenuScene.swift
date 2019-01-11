@@ -16,7 +16,7 @@ class MenuScene: SKScene {
 	var difficultyLabelNode: SKLabelNode!
 	
 	let slider = UISlider(frame: CGRect(x: 57, y: 315, width: 250, height: 5))
-	let thumbImage = UIImage(named: "alien2")
+	let thumbImage = UIImage(named: "alien")
 	
 	override func didMove(to view: SKView) {
 		starfield = self.childNode(withName: "starfield") as! SKEmitterNode
@@ -24,6 +24,10 @@ class MenuScene: SKScene {
 		
 		newGameButtonNode = self.childNode(withName: "newGameButton") as! SKSpriteNode
 		difficultyLabelNode = self.childNode(withName: "difficultyLabel") as! SKLabelNode
+		
+		let store = UserDefaults.standard
+		store.setValue(1, forKey: "difficulty")
+		
 		loadSlider()
 	}
 	
