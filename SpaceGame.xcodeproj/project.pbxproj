@@ -96,6 +96,15 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		29817EB421E89B160094DBFE /* Exit */ = {
+			isa = PBXGroup;
+			children = (
+				29817EAE21E73E630094DBFE /* ExitScene.sks */,
+				29817EB021E7404D0094DBFE /* ExitScene.swift */,
+			);
+			path = Exit;
+			sourceTree = "<group>";
+		};
 		29D3D73921CC81D2003EB06E = {
 			isa = PBXGroup;
 			children = (
@@ -119,8 +128,7 @@
 				29D3D74921CC81D2003EB06E /* Actions.sks */,
 				29D3D74D21CC81D2003EB06E /* GameViewController.swift */,
 				29D3D74F21CC81D2003EB06E /* Main.storyboard */,
-				29817EAE21E73E630094DBFE /* ExitScene.sks */,
-				29817EB021E7404D0094DBFE /* ExitScene.swift */,
+				29817EB421E89B160094DBFE /* Exit */,
 				29817EA621E73CAA0094DBFE /* Game */,
 				29817EA921E73D780094DBFE /* Menu */,
 				29817EA821E73D4E0094DBFE /* Sounds */,
