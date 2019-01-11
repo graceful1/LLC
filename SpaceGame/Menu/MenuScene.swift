@@ -14,9 +14,9 @@ class MenuScene: SKScene {
 	var starfield: SKEmitterNode!
 	var newGameButtonNode: SKSpriteNode!
 	var difficultyLabelNode: SKLabelNode!
-	var userDataDictionary = ["difficulty" : 1.0]
 	
 	let slider = UISlider(frame: CGRect(x: 57, y: 315, width: 250, height: 5))
+	let thumbImage = UIImage(named: "alien2")
 	
 	override func didMove(to view: SKView) {
 		starfield = self.childNode(withName: "starfield") as! SKEmitterNode
@@ -31,6 +31,7 @@ class MenuScene: SKScene {
 		slider.minimumValue = 1
 		slider.maximumValue = 10
 		slider.isContinuous = true
+		slider.setThumbImage(thumbImage, for: .normal)
 		slider.addTarget(self, action: #selector(sliderValueDidChange(_:)), for: .valueChanged)
 		view?.addSubview(slider)
 	}

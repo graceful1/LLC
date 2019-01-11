@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29817EAF21E73E630094DBFE /* ExitScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29817EAE21E73E630094DBFE /* ExitScene.sks */; };
+		29817EB121E7404D0094DBFE /* ExitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29817EB021E7404D0094DBFE /* ExitScene.swift */; };
+		29817EB321E88C430094DBFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29817EB221E88C430094DBFE /* Assets.xcassets */; };
 		29D3D74621CC81D2003EB06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D3D74521CC81D2003EB06E /* AppDelegate.swift */; };
 		29D3D74821CC81D2003EB06E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D74721CC81D2003EB06E /* GameScene.sks */; };
 		29D3D74A21CC81D2003EB06E /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D74921CC81D2003EB06E /* Actions.sks */; };
 		29D3D74C21CC81D2003EB06E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D3D74B21CC81D2003EB06E /* GameScene.swift */; };
 		29D3D74E21CC81D2003EB06E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D3D74D21CC81D2003EB06E /* GameViewController.swift */; };
 		29D3D75121CC81D2003EB06E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D74F21CC81D2003EB06E /* Main.storyboard */; };
-		29D3D75321CC81D3003EB06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D75221CC81D3003EB06E /* Assets.xcassets */; };
 		29D3D75621CC81D3003EB06E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D75421CC81D3003EB06E /* LaunchScreen.storyboard */; };
 		29D3D75E21CC8B41003EB06E /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D75D21CC8B41003EB06E /* explosion.mp3 */; };
 		29D3D76021CC8B52003EB06E /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29D3D75F21CC8B52003EB06E /* torpedo.mp3 */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29817EAE21E73E630094DBFE /* ExitScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExitScene.sks; sourceTree = "<group>"; };
+		29817EB021E7404D0094DBFE /* ExitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitScene.swift; sourceTree = "<group>"; };
+		29817EB221E88C430094DBFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29D3D74221CC81D2003EB06E /* SpaceGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D3D74521CC81D2003EB06E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29D3D74721CC81D2003EB06E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -32,7 +37,6 @@
 		29D3D74B21CC81D2003EB06E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		29D3D74D21CC81D2003EB06E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		29D3D75021CC81D2003EB06E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		29D3D75221CC81D3003EB06E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29D3D75521CC81D3003EB06E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29D3D75721CC81D3003EB06E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29D3D75D21CC8B41003EB06E /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
@@ -115,13 +119,15 @@
 				29D3D74921CC81D2003EB06E /* Actions.sks */,
 				29D3D74D21CC81D2003EB06E /* GameViewController.swift */,
 				29D3D74F21CC81D2003EB06E /* Main.storyboard */,
+				29817EAE21E73E630094DBFE /* ExitScene.sks */,
+				29817EB021E7404D0094DBFE /* ExitScene.swift */,
 				29817EA621E73CAA0094DBFE /* Game */,
 				29817EA921E73D780094DBFE /* Menu */,
 				29817EA821E73D4E0094DBFE /* Sounds */,
-				29D3D75221CC81D3003EB06E /* Assets.xcassets */,
 				29817EA721E73D2B0094DBFE /* Emitters */,
 				29D3D75421CC81D3003EB06E /* LaunchScreen.storyboard */,
 				29D3D75721CC81D3003EB06E /* Info.plist */,
+				29817EB221E88C430094DBFE /* Assets.xcassets */,
 			);
 			path = SpaceGame;
 			sourceTree = "<group>";
@@ -184,16 +190,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29817EAF21E73E630094DBFE /* ExitScene.sks in Resources */,
 				29D3D76021CC8B52003EB06E /* torpedo.mp3 in Resources */,
 				29D3D75E21CC8B41003EB06E /* explosion.mp3 in Resources */,
 				29D3D76621CC8CBC003EB06E /* Starfield.sks in Resources */,
 				29D3D75121CC81D2003EB06E /* Main.storyboard in Resources */,
 				29D3D74821CC81D2003EB06E /* GameScene.sks in Resources */,
-				29D3D75321CC81D3003EB06E /* Assets.xcassets in Resources */,
 				29D3D75621CC81D3003EB06E /* LaunchScreen.storyboard in Resources */,
 				29D3D74A21CC81D2003EB06E /* Actions.sks in Resources */,
 				29D3D76821E03FDF003EB06E /* MenuScene.sks in Resources */,
 				29D3D76221CC8C2E003EB06E /* MyParticle.sks in Resources */,
+				29817EB321E88C430094DBFE /* Assets.xcassets in Resources */,
 				29D3D76421CC8CB1003EB06E /* Explosion.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +214,7 @@
 			files = (
 				29D3D74C21CC81D2003EB06E /* GameScene.swift in Sources */,
 				29D3D76A21E04713003EB06E /* MenuScene.swift in Sources */,
+				29817EB121E7404D0094DBFE /* ExitScene.swift in Sources */,
 				29D3D74E21CC81D2003EB06E /* GameViewController.swift in Sources */,
 				29D3D74621CC81D2003EB06E /* AppDelegate.swift in Sources */,
 			);

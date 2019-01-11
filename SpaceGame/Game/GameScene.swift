@@ -23,6 +23,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	
 	var gameTimer: Timer!
+	var addAlienTimer: Timer!
 	var possibleAliens = ["alien", "alien2", "alien3"]
 	var alienPossibleScales = [1, 1.5, 2]
 	
@@ -30,7 +31,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	let photonTorepdoCategory: Int32 = 0x1 << 0
 	
 	var animationDuration: TimeInterval!
-
+	
+	var pausePlayButtonNode = UIButton(frame: CGRect(x: 300, y: 10, width: 50, height: 50))
+	
     override func didMove(to view: SKView) {
 		starfield = SKEmitterNode(fileNamed: "Starfield")
 		starfield.position = CGPoint(x: 430, y: self.frame.maxY)
@@ -51,41 +54,75 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		
 		self.addChild(scoreLabel)
 		
-		gameTimer = Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(addAlien), userInfo: nil, repeats: true)
+		loadPausePlayButton()
+		
+		addAlienTimer = Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(addAlien), userInfo: nil, repeats: true)
+		
+		gameTimer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(gameOverTransition), userInfo: nil, repeats: false)
 		
     }
 	
+	func loadPausePlayButton() {
+		pausePlayButtonNode.backgroundColor = UIColor.white
+		pausePlayButtonNode.setImage(#imageLiteral(resourceName: "playPause"), for: .normal)
+		pausePlayButtonNode.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+		view?.addSubview(pausePlayButtonNode)
+
+	}
+	
+	@objc func buttonAction(sender: UIButton!) {
+		if self.isPaused == true {
+			self.isPaused = false
+		} else {
+			self.isPaused = true
+		}
+	}
+	
+	@objc func gameOverTransition() {
+		self.isPaused = true
+		let transition = SKTransition.flipHorizontal(withDuration: 0.5)
+		let exitScene = SKScene(fileNamed: "ExitScene") as! ExitScene
+		exitScene.score = self.score
+		exitScene.scaleMode = .aspectFill
+		self.view?.presentScene(exitScene, transition: transition)
+	}
+	
+	override func willMove(from view: SKView) {
+		pausePlayButtonNode.removeFromSuperview()
+	}
+	
 	@objc func addAlien() {
-		possibleAliens = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleAliens) as! [String]
-		alienPossibleScales = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: alienPossibleScales) as! [Double]
-		
-		let alien = SKSpriteNode(imageNamed: possibleAliens[0])
-		let randomAlienXPosition = GKRandomDistribution(lowestValue: Int(self.frame.minX), highestValue: Int(self.frame.maxX))
-		let xPosition = CGFloat(randomAlienXPosition.nextInt())
-
-		alien.position = CGPoint(x: xPosition, y: self.frame.maxY)
-		alien.setScale(CGFloat(alienPossibleScales[0]))
-
-		alien.physicsBody = SKPhysicsBody(rectangleOf: alien.size)
-		alien.physicsBody?.isDynamic = true
-
-		alien.physicsBody?.categoryBitMask = UInt32(alienCategory)
-		alien.physicsBody?.contactTestBitMask = UInt32(photonTorepdoCategory)
-		alien.physicsBody?.collisionBitMask = 0
-		
-		self.addChild(alien)
-		
-		let store = UserDefaults.standard
-		let difficulty = Double(store.float(forKey: "difficulty"))
-		animationDuration = TimeInterval(difficulty)
-				
-		var actionArray = [SKAction]()
-		actionArray.append(SKAction.move(to: CGPoint(x: xPosition, y: self.frame.minY), duration: animationDuration))
-
-		actionArray.append(SKAction.removeFromParent())
-
-		alien.run(SKAction.sequence(actionArray))
-		
+		if self.isPaused != true {
+			possibleAliens = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleAliens) as! [String]
+			alienPossibleScales = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: alienPossibleScales) as! [Double]
+			
+			let alien = SKSpriteNode(imageNamed: possibleAliens[0])
+			let randomAlienXPosition = GKRandomDistribution(lowestValue: Int(self.frame.minX + 20), highestValue: Int(self.frame.maxX - 20))
+			let xPosition = CGFloat(randomAlienXPosition.nextInt())
+			
+			alien.position = CGPoint(x: xPosition, y: self.frame.maxY)
+			alien.setScale(CGFloat(alienPossibleScales[0]))
+			
+			alien.physicsBody = SKPhysicsBody(rectangleOf: alien.size)
+			alien.physicsBody?.isDynamic = true
+			
+			alien.physicsBody?.categoryBitMask = UInt32(alienCategory)
+			alien.physicsBody?.contactTestBitMask = UInt32(photonTorepdoCategory)
+			alien.physicsBody?.collisionBitMask = 0
+			
+			self.addChild(alien)
+			
+			let store = UserDefaults.standard
+			let difficulty = Double(store.float(forKey: "difficulty"))
+			animationDuration = TimeInterval(difficulty)
+			
+			var actionArray = [SKAction]()
+			actionArray.append(SKAction.move(to: CGPoint(x: xPosition, y: self.frame.minY), duration: animationDuration))
+			
+			actionArray.append(SKAction.removeFromParent())
+			
+			alien.run(SKAction.sequence(actionArray))
+		}
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
