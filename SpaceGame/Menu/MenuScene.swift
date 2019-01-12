@@ -15,7 +15,7 @@ class MenuScene: SKScene {
 	var newGameButtonNode: SKSpriteNode!
 	var difficultyLabelNode: SKLabelNode!
 	
-	let slider = UISlider(frame: CGRect(x: 57, y: 315, width: 250, height: 5))
+	let slider = UISlider(frame: CGRect(x: 57, y: 400, width: 250, height: 5))
 	let thumbImage = UIImage(named: "alien")
 	
 	override func didMove(to view: SKView) {
@@ -36,8 +36,10 @@ class MenuScene: SKScene {
 		slider.maximumValue = 10
 		slider.isContinuous = true
 		slider.setThumbImage(thumbImage, for: .normal)
+		
 		slider.addTarget(self, action: #selector(sliderValueDidChange(_:)), for: .valueChanged)
 		view?.addSubview(slider)
+		
 	}
 	
 	@objc func sliderValueDidChange(_ sender:UISlider!) {
