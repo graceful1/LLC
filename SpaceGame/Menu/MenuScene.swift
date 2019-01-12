@@ -48,6 +48,7 @@ class MenuScene: SKScene {
 	
 	func changeDifficulty(value: Float) {
 		difficultyLabelNode.text = String(format: "Speed: %.f", value)
+//		let newDifficultySpeed = value - 10
 		let store = UserDefaults.standard
 		store.setValue(value, forKey: "difficulty")
 	}

@@ -113,7 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			self.addChild(alien)
 			
 			let store = UserDefaults.standard
-			let difficulty = Double(store.float(forKey: "difficulty"))
+			let difficulty = -Double(store.float(forKey: "difficulty")) + 11
 			animationDuration = TimeInterval(difficulty)
 			
 			var actionArray = [SKAction]()
