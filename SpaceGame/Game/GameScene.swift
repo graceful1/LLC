@@ -31,6 +31,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	let photonTorepdoCategory: Int32 = 0x1 << 0
 	
 	var animationDuration: TimeInterval!
+	let gameDurationTime = 20.0
 	
 	var pausePlayButtonNode = UIButton(frame: CGRect(x: 300, y: 10, width: 50, height: 50))
 	
@@ -58,7 +59,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		
 		addAlienTimer = Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(addAlien), userInfo: nil, repeats: true)
 		
-		gameTimer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(gameOverTransition), userInfo: nil, repeats: false)
+		gameTimer = Timer.scheduledTimer(timeInterval: gameDurationTime, target: self, selector: #selector(gameOverTransition), userInfo: nil, repeats: false)
 		
     }
 	
@@ -71,9 +72,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	
 	@objc func buttonAction(sender: UIButton!) {
+		
 		if self.isPaused == true {
+			gameTimer = Timer.scheduledTimer(timeInterval: gameDurationTime, target: self, selector: #selector(gameOverTransition), userInfo: nil, repeats: false)
 			self.isPaused = false
 		} else {
+			gameTimer.invalidate()
 			self.isPaused = true
 		}
 	}
@@ -130,7 +134,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	
 	func touchDown(atPoint: CGPoint) {
-		fireTorpedo(atPoint: atPoint)
+		if self.isPaused != true {
+			fireTorpedo(atPoint: atPoint)
+		}
 	}
 
 	
