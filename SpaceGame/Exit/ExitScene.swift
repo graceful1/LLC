@@ -13,11 +13,11 @@ class ExitScene: SKScene {
 	
 	var score: Int = 0
 	var scoreLabel: SKLabelNode!
-	var newGameButtonNode: SKSpriteNode!
 	
 	override func didMove(to view: SKView) {
 		scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
 		scoreLabel.text = "\(score)"
+		
 	}
 	
 

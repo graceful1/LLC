@@ -83,6 +83,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	
 	@objc func gameOverTransition() {
+		removeAllActions()
+		
 		self.isPaused = true
 		let transition = SKTransition.flipHorizontal(withDuration: 0.5)
 		let exitScene = SKScene(fileNamed: "ExitScene") as! ExitScene
@@ -101,7 +103,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			alienPossibleScales = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: alienPossibleScales) as! [Double]
 			
 			let alien = SKSpriteNode(imageNamed: possibleAliens[0])
-			let randomAlienXPosition = GKRandomDistribution(lowestValue: Int(self.frame.minX + 20), highestValue: Int(self.frame.maxX - 20))
+			let randomAlienXPosition = GKRandomDistribution(lowestValue: Int(self.frame.minX + 30), highestValue: Int(self.frame.maxX - 30))
 			let xPosition = CGFloat(randomAlienXPosition.nextInt())
 			
 			alien.position = CGPoint(x: xPosition, y: self.frame.maxY)
@@ -212,8 +214,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			score += 1
 		}
 	}
-}
-
-protocol SpeedDifficultyDelegate {
 	
 }

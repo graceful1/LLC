@@ -29,6 +29,7 @@ class MenuScene: SKScene {
 		store.setValue(1, forKey: "difficulty")
 		
 		loadSlider()
+		
 	}
 	
 	private func loadSlider() {
@@ -38,8 +39,7 @@ class MenuScene: SKScene {
 		slider.setThumbImage(thumbImage, for: .normal)
 		
 		slider.addTarget(self, action: #selector(sliderValueDidChange(_:)), for: .valueChanged)
-		view?.addSubview(slider)
-		
+		self.view?.addSubview(slider)
 	}
 	
 	@objc func sliderValueDidChange(_ sender:UISlider!) {
@@ -48,7 +48,6 @@ class MenuScene: SKScene {
 	
 	func changeDifficulty(value: Float) {
 		difficultyLabelNode.text = String(format: "Speed: %.f", value)
-//		let newDifficultySpeed = value - 10
 		let store = UserDefaults.standard
 		store.setValue(value, forKey: "difficulty")
 	}

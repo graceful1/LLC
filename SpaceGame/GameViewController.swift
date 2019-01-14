@@ -50,4 +50,11 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		if let view = self.view as! SKView? {
+			view.removeFromSuperview()
+			self.view = nil
+		}
+	}
 }
